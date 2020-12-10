@@ -1,0 +1,22 @@
+{
+  "name": "advanced-nodejs-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottgamer/advanced-nodejs-course.git"
+  },
+  "author": "Richard Munoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottgamer/advanced-nodejs-course/issues"
+  },
+  "homepage": "https://github.com/scottgamer/advanced-nodejs-course#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
