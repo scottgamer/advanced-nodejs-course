@@ -26,7 +26,7 @@ test("clicking login starts oauth flow", async () => {
   expect(url).toMatch(/accounts\.google\.com/);
 });
 
-test.only("when signed in, shows logout button", async () => {
+test("when signed in, shows logout button", async () => {
   const id = "5fd43f2ecc71a524cca03733";
 
   const Buffer = require("safe-buffer").Buffer;
@@ -48,4 +48,10 @@ test.only("when signed in, shows logout button", async () => {
   await page.setCookie({ name: "session", value: sessionString });
   await page.setCookie({ name: "session.sig", value: sig });
   await page.goto("localhost:3000");
+
+  // wait for this selector to then proceed to next statement
+  await page.waitFor('a[href="/auth/logout"]');
+
+  const text = await page.$eval('a[href="/auth/logout"]', (el) => el.innerHTML);
+  expect(text).toEqual("Logout");
 });
