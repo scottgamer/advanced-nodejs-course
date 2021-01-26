@@ -1,3 +1,4 @@
+Number.prototype._called = {};
 jest.setTimeout(30000);
 
 require("../models/User");
